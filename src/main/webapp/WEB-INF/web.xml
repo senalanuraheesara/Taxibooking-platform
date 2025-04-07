@@ -3,4 +3,78 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
+
+    <!-- Session Configuration -->
+    <session-config>
+        <session-timeout>30</session-timeout> <!-- 30 minutes -->
+        <cookie-config>
+            <http-only>true</http-only>
+            <secure>false</secure> <!-- Set to true for HTTPS -->
+        </cookie-config>
+    </session-config>
+
+    <!-- Error Pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error/500.jsp</location>
+    </error-page>
+
+    <!-- Welcome Files -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>home.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Security Constraints -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Protected Resources</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+            <url-pattern>/profile.jsp</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>*</role-name> <!-- Requires any authenticated role -->
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- Login Configuration -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>CityCabRealm</realm-name>
+        <form-login-config>
+            <form-login-page>/auth/login.jsp</form-login-page>
+            <form-error-page>/auth/login.jsp?error=true</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <!-- Servlet Mappings (Alternative to @WebServlet) -->
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>lk.sliit.taxibooking.taxibooking.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/user-servlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Context Parameters -->
+    <context-param>
+        <param-name>usersFilePath</param-name>
+        <param-value>/WEB-INF/users.txt</param-value>
+    </context-param>
+
+    <!-- MIME Type Mappings -->
+    <mime-mapping>
+        <extension>js</extension>
+        <mime-type>application/javascript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>css</extension>
+        <mime-type>text/css</mime-type>
+    </mime-mapping>
+
 </web-app>
