@@ -14,7 +14,7 @@
             background-color: #f9f9f9;
         }
         .hero {
-            background: url('images/hero-cab.png') no-repeat center center/cover;
+            background: url('images/hero-cabs.png') no-repeat center center/cover;
             color: white;
             padding: 100px 0;
             text-align: center;
