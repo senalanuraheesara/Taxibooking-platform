@@ -2,76 +2,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <title>Login | City Cab Service</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Cab Service</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/styles.css" rel="stylesheet">
-    <style>
-        .login-bg {
-            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(255, 255, 255, 1) 100%);
-            min-height: 100vh;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.png" type="image/png">
 </head>
-<body class="login-bg">
-<div class="container">
-    <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
-        <div class="col-md-5">
-            <div class="card shadow-lg fade-in">
-                <div class="card-body p-5">
-                    <div class="text-center mb-4">
-                        <img src="assets/images/logo.png" alt="Cab Service Logo" width="80" class="mb-3">
-                        <h3 class="mb-1">Welcome Back</h3>
-                        <p class="text-muted">Sign in to your account</p>
-                    </div>
+<body>
 
-                    <form action="UserServlet" method="post">
-                        <input type="hidden" name="action" value="login">
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
-                            <div class="input-group">
-                                    <span class="input-group-text">
-                                        <i class="bi bi-envelope"></i>
-                                    </span>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <div class="input-group">
-                                    <span class="input-group-text">
-                                        <i class="bi bi-lock"></i>
-                                    </span>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="••••••••" required>
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="remember" name="remember">
-                                <label class="form-check-label" for="remember">Remember me</label>
-                            </div>
-                            <a href="forgot-password.jsp" class="text-primary small">Forgot password?</a>
-                        </div>
-
-                        <div class="d-grid mb-3">
-                            <button type="submit" class="btn btn-primary">Sign In</button>
-                        </div>
-
-                        <div class="text-center">
-                            <p class="mb-0">Don't have an account? <a href="register.jsp" class="text-primary">Sign up</a></p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<!-- Navbar -->
+<div class="navbar">
+    <div class="navbar-logo">
+        <i class="fas fa-taxi"></i> City Cab Service
+    </div>
+    <div>
+        <a href="index.jsp"><i class="fas fa-home"></i> Home</a>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<!-- Login Form -->
+<div class="login-wrapper">
+    <div class="login-container">
+        <img src="images/logo.png" alt="Cab Service Logo">
+        <h2>Welcome Back</h2>
+        <p>Sign in to your account</p>
+
+        <form method="post" action="login">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+            </div>
+
+            <div class="form-group-bottom">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+
+            <button type="submit" class="btn mt-2"><i class="fas fa-sign-in-alt"></i> Sign In</button>
+        </form>
+
+        <div class="form-footer">
+            Don't have an account? <a href="register.jsp">Sign up</a>
+        </div>
+
+        <% String error = (String) request.getAttribute("error"); %>
+        <% if (error != null) { %>
+        <div class="alert">
+            <i class="fas fa-exclamation-circle"></i> <%= error %>
+        </div>
+        <% } %>
+    </div>
+</div>
+
 </body>
 </html>
