@@ -1,3 +1,0 @@
-1,Admin User,admin@citycab.lk,JDJiJDEyJE9uNkZ6VU8uZGVHL1BwLk9kZUwuNHVXOWFlL1BQYk9JYk5tZk5pS3BpZUZ1ZkZJejJp,admin
-2,Driver One,driver1@citycab.lk,JDJiJDEyJE9uNkZ6VU8uZGVHL1BwLk9kZUwuNHVXOWFlL1BQYk9JYk5tZk5pS3BpZUZ1ZkZJejJp,driver
-3,Passenger One,passenger1@citycab.lk,JDJiJDEyJE9uNkZ6VU8uZGVHL1BwLk9kZUwuNHVXOWFlL1BQYk9JYk5tZk5pS3BpZUZ1ZkZJejJp,passenger
