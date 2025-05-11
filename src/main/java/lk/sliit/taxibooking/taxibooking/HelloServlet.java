@@ -1,7 +1,6 @@
 package lk.sliit.taxibooking.taxibooking;
 
 import java.io.*;
-
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -21,6 +20,15 @@ public class HelloServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String id = request.getParameter("id");
+        UserDAO.delete(id);
+
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        out.println("{\"success\": true, \"id\": \"" + id + "\"}");
     }
 
     public void destroy() {
