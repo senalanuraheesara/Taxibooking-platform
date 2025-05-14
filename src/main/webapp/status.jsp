@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h2>🚖 Ride Status</h2>
+<h2>Ride Status</h2>
 <table>
     <tr>
         <th>Passenger</th>
@@ -40,6 +40,8 @@
     <% } %>
 </table>
 
-<a href="booking.jsp">⬅ Back to Booking</a>
+<a href="assign.jsp">Assign Next Ride</a>
+<a href="clear.jsp">Clear All Rides</a>
+<a href="booking.jsp">Back to Booking</a>
 </body>
 </html>

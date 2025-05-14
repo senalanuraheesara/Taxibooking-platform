@@ -1,11 +1,13 @@
 package com.taxi.booking.service;
 
 import com.taxi.booking.model.Booking;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class RideManager {
-    private Queue<Booking> rideQueue = new LinkedList<>();
+
+    private static Queue<Booking> rideQueue = new LinkedList<>();
 
     public void addBooking(Booking booking) {
         rideQueue.add(booking);
@@ -16,15 +18,24 @@ public class RideManager {
     }
 
     public Booking assignDriver() {
-        Booking next = rideQueue.peek();
-        if (next != null && !next.isAssigned()) {
-            next.setAssigned(true);
+        for (Booking booking : rideQueue) {
+            if (!booking.isAssigned()) {
+                booking.setAssigned(true);
+                return booking;
+            }
         }
-        return next;
+        return null;
     }
 
     public Booking removeBooking() {
         return rideQueue.poll();
     }
-}
 
+    public void clearAllBookings() {
+        rideQueue.clear();
+    }
+
+    public int getQueueSize() {
+        return rideQueue.size();
+    }
+}

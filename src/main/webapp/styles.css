@@ -1,6 +1,7 @@
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: #f1f1f1;
+    background-color: #f5f5f5;
+    margin: 0;
     padding: 20px;
     color: #333;
 }
@@ -8,15 +9,16 @@ body {
 h2 {
     color: #2b6777;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 form {
     max-width: 500px;
     margin: auto;
     background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 8px #ccc;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 input[type="text"], input[type="submit"] {
@@ -25,11 +27,13 @@ input[type="text"], input[type="submit"] {
     margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
+    font-size: 15px;
 }
 
 input[type="submit"] {
     background-color: #2b6777;
     color: white;
+    font-weight: bold;
     border: none;
     cursor: pointer;
 }
@@ -40,23 +44,28 @@ input[type="submit"]:hover {
 
 table {
     width: 80%;
-    margin: auto;
+    margin: 30px auto;
     background: white;
     border-collapse: collapse;
     box-shadow: 0px 0px 8px #ccc;
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     text-align: center;
+    font-size: 15px;
 }
 
 a {
     display: block;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 25px;
     text-decoration: none;
     color: #2b6777;
     font-weight: bold;
+}
+
+a:hover {
+    color: #52ab98;
 }
