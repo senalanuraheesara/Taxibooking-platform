@@ -4,26 +4,20 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
-import java.util.UUID;
 
-@WebServlet("/register")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/profile")
+public class ProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String role = request.getParameter("role");
-        String id = UUID.randomUUID().toString();
-        String name = request.getParameter("name");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String phone = request.getParameter("phone");
+        HttpSession session = request.getSession(false);
+        User user = (User) session.getAttribute("user");
 
-        User user;
-        if ("driver".equalsIgnoreCase(role)) {
-            user = new Driver(id, name, email, password, phone);
+        if (user != null) {
+            user.setName(request.getParameter("name"));
+            user.setPhone(request.getParameter("phone"));
+            UserDAO.update(user);
+            response.sendRedirect("profile.jsp");
         } else {
-            user = new Passenger(id, name, email, password, phone);
+            response.sendRedirect("login.jsp");
         }
-
-        UserDAO.register(user);
-        response.sendRedirect("login.jsp");
     }
 }

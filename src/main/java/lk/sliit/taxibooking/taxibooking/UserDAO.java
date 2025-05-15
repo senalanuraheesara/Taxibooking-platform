@@ -38,14 +38,16 @@ public class UserDAO {
     public static void delete(String id) {
         users.remove(id);
         saveToFile();
-        System.out.println("deleted" + id);
+        System.out.println("deleted " + id);
     }
 
     private static void saveToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (User user : users.values()) {
-                String role = user instanceof Driver ? "Driver" : "Passenger";
-                writer.write(user.getId() + "," + user.getName() + "," + user.getEmail() + "," + user.getPassword() + "," + user.getPhone() + "," + role);
+                // ✅ Use the role field directly
+                String role = user.getRole();
+                writer.write(user.getId() + "," + user.getName() + "," + user.getEmail() + "," +
+                        user.getPassword() + "," + user.getPhone() + "," + role);
                 writer.newLine();
             }
         } catch (IOException e) {
@@ -70,10 +72,16 @@ public class UserDAO {
                     String role = parts[5];
 
                     User user;
-                    if (role.equalsIgnoreCase("Driver")) {
-                        user = new Driver(id, name, email, password, phone);
-                    } else {
-                        user = new Passenger(id, name, email, password, phone);
+                    switch (role.toLowerCase()) {
+                        case "driver":
+                            user = new Driver(id, name, email, password, phone, role);
+                            break;
+                        case "admin":
+                            user = new Admin(id, name, email, password, phone, role);
+                            break;
+                        default:
+                            user = new Passenger(id, name, email, password, phone, role);
+                            break;
                     }
 
                     users.put(id, user);

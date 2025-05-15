@@ -6,13 +6,15 @@ public class User {
     protected String email;
     protected String password;
     protected String phone;
+    protected String role;
 
-    public User(String id, String name, String email, String password, String phone) {
+    public User(String id, String name, String email, String password, String phone,String role) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.phone = phone;
+        this.role=role;
     }
 
     public String getId() { return id; }
@@ -29,4 +31,8 @@ public class User {
 
     public String getPhone() { return phone; }
     public void setPhone(String phone) { this.phone = phone; }
+
+    public String getRole() {
+        return role;
+    }
 }
