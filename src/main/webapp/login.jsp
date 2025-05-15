@@ -28,7 +28,8 @@
         <h2>Welcome Back</h2>
         <p>Sign in to your account</p>
 
-        <form method="post" action="login">
+        <form method="post" action="LoginServlet">
+            <input type="hidden" name="from" value="">
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>

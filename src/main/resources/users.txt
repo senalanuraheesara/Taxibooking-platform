@@ -1,2 +1,6 @@
-bd2b2448-2403-4500-9af0-2e2e155d01f3,samadhi,samadhi@gmail.com,1,0723369878,passenger
+6e6b3c1f-6433-4219-b4d1-5a61be802603,samadhi,samadhi@gmail.com,1,45678,driver
+1b6d350d-7fb1-426d-aece-b48439e7b485,senal anura,senalanura@gmail.com,1,1111,passenger
+e2a5c77f-73df-4f1a-994a-8422a87de6d4,Dhananjana,dhananjana@gmail.com,n,0761569981,admin
+be8a064e-ef70-4cfa-b5ea-123e481b2b06,dinuja,dinuja@gmail.com,1,ev nenjf,passenger
+40984b33-1ead-40cd-a9f1-6b60415fc3cd,samadhi,samadhi@gmail.com,1,wfdbnwjf,driver
 7d50dc82-5687-4786-87b8-1ec03a96ba8d,Dinuja,prabhadeetravelblog@gmail.com,n,0712345679,Passenger

@@ -21,15 +21,15 @@ public class LoginServlet extends HttpServlet {
         if (user != null) {
             HttpSession session = request.getSession();
 
-            // Store full user object in session
+            // ✅ Store full user object in session
             session.setAttribute("user", user);
 
-            // Also store individual attributes if needed
+            // ✅ Also store individual attributes if needed
             session.setAttribute("userId", user.getId());
             session.setAttribute("username", user.getName());
             session.setAttribute("role", user.getRole());
 
-            // Redirect based on user role
+            // ✅ Redirect based on user role
             switch (user.getRole().toLowerCase()) {
                 case "admin":
                     response.sendRedirect("adminmanagement.jsp");
@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
             }
 
         } else {
-            //  Login failed
+            // ❌ Login failed
             request.setAttribute("error", "Invalid email or password.");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
