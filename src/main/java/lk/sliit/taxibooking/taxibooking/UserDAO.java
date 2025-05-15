@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class UserDAO {
-    private static final String FILE_PATH = "C:\\Users\\senal\\IdeaProjects\\Taxibooking\\src\\main\\resources\\users.txt";
+    private static final String FILE_PATH = "C:\\Users\\senal\\IdeaProjects\\Taxibooking\\src\\main\\webapp\\WEB-INF\\users.txt";
     private static Map<String, User> users = new HashMap<>();
 
     // Load users when class loads

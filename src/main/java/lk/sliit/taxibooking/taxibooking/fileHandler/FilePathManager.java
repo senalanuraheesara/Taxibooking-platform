@@ -12,7 +12,7 @@ public enum FilePathManager {
     private final Map<Class<?>, String> pathMap = new HashMap<>();
 
     FilePathManager() {
-        pathMap.put(User.class, "users.txt");
+        pathMap.put(User.class, "WEB-INF/users.txt");
     }
 
     public String getFilePath(Class<?> clazz) {
