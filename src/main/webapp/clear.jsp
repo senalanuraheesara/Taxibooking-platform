@@ -12,9 +12,35 @@
     manager.clearAllBookings();
 %>
 <html>
-<head><title>Clear All Rides</title><link rel="stylesheet" href="styles.css"></head>
+<head>
+    <title>🧹 Clear All Rides</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-<h2>All rides cleared!</h2>
-<a href="status.jsp">← Back to Status</a>
+<div class="login-wrapper">
+    <div class="login-container">
+        <h2>Clear Ride History</h2>
+
+        <%
+            manager = new RideManager();
+            manager.clearAllBookings();
+        %>
+
+        <div class="alert">
+            All Rides have been cleared.
+        </div>
+
+        <a class="btn mt-2" href="status.jsp">← Back to Status</a>
+    </div>
+</div>
+<div class="profile-container">
+    <div class="profile-card">
+        <h2>Are you sure you want to clear all bookings?</h2>
+        <form action="clear" method="post">
+            <button type="submit" class="btn danger-btn">Yes</button>
+            <a href="status.jsp" class="btn secondary-btn">Cancel</a>
+        </form>
+    </div>
+</div>
 </body>
 </html>

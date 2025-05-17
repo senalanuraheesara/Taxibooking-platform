@@ -5,13 +5,15 @@ public class Booking {
     private String pickupLocation;
     private String dropLocation;
     private String time;
+    private String distance;
     private boolean assigned;
 
-    public Booking(String passengerName, String pickupLocation, String dropLocation, String time) {
-        this.passengerName = passengerName;
-        this.pickupLocation = pickupLocation;
-        this.dropLocation = dropLocation;
+    public Booking(String name, String pickup, String drop, String time, String distance) {
+        this.passengerName = name;
+        this.pickupLocation = pickup;
+        this.dropLocation = drop;
         this.time = time;
+        this.distance = distance;
     }
 
     public String getPassengerName() {
@@ -29,6 +31,8 @@ public class Booking {
     public String getTime() {
         return time;
     }
+
+    public String getDistance() { return distance;}
 
     public boolean isAssigned() {return true;}
 

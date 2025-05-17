@@ -13,7 +13,10 @@
     Booking ride = manager.assignDriver();
 %>
 <html>
-<head><title>Assign Driver</title><link rel="stylesheet" href="styles.css"></head>
+<head>
+    <title>🚖 Assign a Driver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
 <h2>Assign Driver Result</h2>
 <% if (ride != null && ride.isAssigned()) { %>

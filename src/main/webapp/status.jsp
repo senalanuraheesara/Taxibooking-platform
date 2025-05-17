@@ -5,43 +5,76 @@
   Time: 9:19 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="java.util.*, com.taxi.booking.model.Booking" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.Queue" %>
+<%@ page import="com.taxi.booking.model.Booking" %>
+<%@ page import="com.taxi.booking.service.RideManager" %>
 <html>
 <head>
-    <title>Ride Status</title>
+    <meta charset="UTF-8">
+    <title>🚖 Ride Status</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h2>Ride Status</h2>
-<table>
-    <tr>
-        <th>Passenger</th>
-        <th>Pickup</th>
-        <th>Drop</th>
-        <th>Time</th>
-    </tr>
-    <%
-        Queue<Booking> rideQueue = (Queue<Booking>) application.getAttribute("rideQueue");
-        if (rideQueue != null && !rideQueue.isEmpty()) {
-            for (Booking booking : rideQueue) {
-    %>
-    <tr>
-        <td><%= booking.getPassengerName() %></td>
-        <td><%= booking.getPickupLocation() %></td>
-        <td><%= booking.getDropLocation() %></td>
-        <td><%= booking.getTime() %></td>
-    </tr>
-    <%
-        }
-    } else {
-    %>
-    <tr><td colspan="4">No active bookings.</td></tr>
-    <% } %>
-</table>
 
-<a href="assign.jsp">Assign Next Ride</a>
-<a href="clear.jsp">Clear All Rides</a>
-<a href="booking.jsp">Back to Booking</a>
+<div class="login-wrapper">
+    <div class="login-container">
+        <h2>Active Ride Status</h2>
+
+        <%
+            RideManager manager = new RideManager();
+            Queue<Booking> rides = manager.getAllBookings();
+
+            if (rides.isEmpty()) {
+        %>
+            <div class="alert">No Pending Ride Requests!</div>
+        <%
+            } else {
+        %>
+            <table>
+                <tr>
+                    <th>Passenger</th>
+                    <th>Pickup</th>
+                    <th>Drop</th>
+                    <th>Time</th>
+                    <th>Distance (km)</th>
+                    <th>Status</th>
+                </tr>
+                <%
+                    for (Booking ride : rides) {
+                %>
+                <tr>
+                    <td><%= ride.getPassengerName() %></td>
+                    <td><%= ride.getPickupLocation() %></td>
+                    <td><%= ride.getDropLocation() %></td>
+                    <td><%= ride.getTime() %></td>
+                    <td><%= ride.getDistance() %></td>
+                    <td>
+                        <% if (ride.isAssigned()) { %>
+                            Assigned
+                        <% } else { %>
+                            Not Assigned
+                        <% } %>
+                    </td>
+                </tr>
+                <%
+                    }
+                %>
+            </table>
+        <%
+            }
+        %>
+
+        <div class="form-footer">
+            <a href="assign.jsp">Assign Driver</a>
+        </div>
+        <div class="form-footer">
+            <a href="clear.jsp">Clear All Rides</a>
+        </div>
+        <div class="form-footer mt-3">
+            <a href="booking.jsp">Back to Booking</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

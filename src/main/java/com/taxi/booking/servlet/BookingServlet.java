@@ -28,9 +28,12 @@ public class BookingServlet extends HttpServlet {
         String name = request.getParameter("passengerName");
         String pickup = request.getParameter("pickupLocation");
         String drop = request.getParameter("dropLocation");
-        String time = request.getParameter("time");
+        String distance = request.getParameter("distance");
+        String timeInput = request.getParameter("time");
+        String ampm = request.getParameter("ampm");
+        String time = timeInput + " " + ampm;
 
-        Booking booking = new Booking(name, pickup, drop, time);
+        Booking booking = new Booking(name, pickup, drop, time, distance);
         rideManager.addBooking(booking);
 
         // update context attribute
