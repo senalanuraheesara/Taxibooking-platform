@@ -1,4 +1,4 @@
-package com.taxi.booking.model;
+package lk.sliit.taxibooking.taxibooking.model;
 
 public class Booking {
     private String passengerName;

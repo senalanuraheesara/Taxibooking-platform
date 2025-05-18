@@ -6,8 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.taxi.booking.service.RideManager" %>
-<%@ page import="com.taxi.booking.model.Booking" %>
+<%@ page import="lk.sliit.taxibooking.taxibooking.service.RideManager" %>
+<%@ page import="lk.sliit.taxibooking.taxibooking.model.Booking" %>
 <%
     RideManager manager = new RideManager();
     Booking ride = manager.assignDriver();

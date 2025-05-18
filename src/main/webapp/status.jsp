@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.Queue" %>
-<%@ page import="com.taxi.booking.model.Booking" %>
-<%@ page import="com.taxi.booking.service.RideManager" %>
+<%@ page import="lk.sliit.taxibooking.taxibooking.model.Booking" %>
+<%@ page import="lk.sliit.taxibooking.taxibooking.service.RideManager" %>
 <html>
 <head>
     <meta charset="UTF-8">

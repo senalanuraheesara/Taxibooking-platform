@@ -1,14 +1,13 @@
-package com.taxi.booking.servlet;
+package lk.sliit.taxibooking.taxibooking.servlet;
 
-import com.taxi.booking.model.Booking;
-import com.taxi.booking.service.RideManager;
+import lk.sliit.taxibooking.taxibooking.model.Booking;
+import lk.sliit.taxibooking.taxibooking.service.RideManager;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/booking")
