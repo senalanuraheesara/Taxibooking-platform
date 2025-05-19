@@ -4,3 +4,11 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
 </web-app>
+<servlet>
+<servlet-name>ProcessPayment</servlet-name>
+<servlet-class>lk.sliit.taxiBooking.ProcessPayment</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProcessPayment</servlet-name>
+<url-pattern>/ProcessPayment</url-pattern>
+</servlet-mapping>

@@ -9,7 +9,8 @@
 <div class="login-wrapper">
     <div class="login-container">
         <h2>Payment</h2>
-        <form action="booking" method="get">
+        <!-- Changed action to "ProcessPayment" and method to "post" -->
+        <form action="ProcessPayment" method="post">
             <div class="form-group">
                 <label>Passenger Name</label>
                 <input type="text" name="passengerName" class="form-control" required>
@@ -23,17 +24,17 @@
                 <input type="text" name="dropLocation" class="form-control" required>
             </div>
             <div class="form-group">
-                <label>Estimated Distance</label>
-                <input type="text" name="distance" class="form-control" required>
+                <label>Estimated Distance (km)</label>
+                <input type="number" name="distance" class="form-control" step="0.1" required>
             </div>
             <div class="form-group">
-                <label>Total</label>
-                <input type="text" name="total" class="form-control" required>
+                <label>Total (Rs.)</label>
+                <input type="number" name="total" class="form-control" step="0.01" required>
             </div>
             <button type="submit" class="btn">Do Payment</button>
         </form>
         <div class="form-footer mt-2">
-            <a href="status.jsp">View Ride History</a>
+            <a href="RideHistory">View Ride History</a>
         </div>
     </div>
 </div>
