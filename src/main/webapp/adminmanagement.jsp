@@ -30,7 +30,7 @@
             <li><a href="manage-drivers.jsp" class="hover:text-blue-500">Drivers</a></li>
             <li><a href="manage-rides.jsp" class="hover:text-blue-500">Rides</a></li>
             <li><a href="system-settings.jsp" class="hover:text-blue-500">Settings</a></li>
-            <li><a href="logout.jsp" class="hover:text-red-500">Logout</a></li>
+            <li><a href="logout" class="hover:text-red-500">Logout</a></li>
         </ul>
     </div>
 </header>
