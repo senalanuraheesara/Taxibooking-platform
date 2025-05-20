@@ -19,7 +19,7 @@
         <i class="fas fa-taxi"></i> City Cab Service
     </div>
     <div>
-        <a href="index.jsp"><i class="fas fa-home"></i> Home</a>
+        <a href="review-entrance.jsp"><i class="fas fa-home"></i> Home</a>
     </div>
 
 </div>

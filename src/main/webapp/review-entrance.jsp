@@ -18,7 +18,7 @@
         <i class="fas fa-taxi"></i> City Cab Service
     </div>
     <div>
-        <a href="index.jsp"><i class="fas fa-home"></i> Home</a>
+        <a href="review-entrance.jsp"><i class="fas fa-home"></i> Home</a>
     </div>
 </div>
 <div class="profile-container">
@@ -57,7 +57,7 @@
             </c:if>
 
             <div class="quick-links">
-                <a href="index.jsp" class="quick-link">Home</a>
+                <a href="review-entrance.jsp" class="quick-link">Home</a>
                 <a href="submit-review.jsp" class="quick-link">Submit Review</a>
                 <a href="driver-ratings.jsp" class="quick-link">Driver Ratings</a>
             </div>

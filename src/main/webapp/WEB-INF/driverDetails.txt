@@ -3,4 +3,4 @@ d4654d68-ec27-4423-be57-76759f471fbe,Dilitha Sandamal,dilithasandamal13@gmail.co
 ca3712cf-7e61-4830-ba34-5f9e09f37ca0,yasoma,yasoma@gmail.com,12345677,12345,zh bczh,Available,7,0.0
 ca3712cf-7e61-4830-ba34-6j9e09f37ca0,senal,senal@gmail.com,09876543,12345,edff,Available,8,4.0
 d4654d68-ec27-4423-be57-76759f471fbe,Dilitha Sandamal,dilithasandamal13@gmail.com,+94 71 6278245,KK 8872,Land Cruiser,Available,20,0.0
-e1234f56-ab78-9012-cd34-56789ef01234,yasoma,yasoma@example.com,+94 71 1234567,AB 1234,Sedan,Available,15,0.0
+e1234f56-ab78-9012-cd34-56789ef01234,sana,yasoma@example.com,+94 71 1234567,AB 1234,Sedan,Available,15,0.0
