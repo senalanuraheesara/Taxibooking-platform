@@ -4,18 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Driver {
-    private String id;
     private String name;
     private List<Review> reviews;
 
-    public Driver(String id, String name) {
-        this.id = id;
+    public Driver(String name) {
         this.name = name;
         this.reviews = new ArrayList<>();
     }
 
-    // Getters and methods to add reviews and calculate average rating
-    public String getId() { return id; }
     public String getName() { return name; }
     public List<Review> getReviews() { return reviews; }
 
