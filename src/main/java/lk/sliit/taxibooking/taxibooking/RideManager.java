@@ -1,6 +1,4 @@
-package lk.sliit.taxibooking.taxibooking.service;
-
-import lk.sliit.taxibooking.taxibooking.model.Booking;
+package lk.sliit.taxibooking.taxibooking;
 
 import java.util.LinkedList;
 import java.util.Queue;

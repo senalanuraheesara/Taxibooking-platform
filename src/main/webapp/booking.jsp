@@ -10,17 +10,14 @@
 <html>
 <head>
     <title>🚖 Book a Ride</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="login-wrapper">
     <div class="login-container">
         <h2>Book a Ride</h2>
+
         <form action="booking" method="post">
-            <div class="form-group">
-                <label>Passenger Name</label>
-                <input type="text" name="passengerName" class="form-control" required>
-            </div>
             <div class="form-group">
                 <label>Pickup Location</label>
                 <input type="text" name="pickupLocation" class="form-control" required>
@@ -46,11 +43,8 @@
                     </select>
                 </div>
             </div>
-            <button type="submit" class="btn">Book Ride</button>
+            <button type="submit" class="btn">Assign Driver</button>
         </form>
-        <div class="form-footer mt-2">
-            <a href="status.jsp">View Ride History</a>
-        </div>
     </div>
 </div>
 </body>
