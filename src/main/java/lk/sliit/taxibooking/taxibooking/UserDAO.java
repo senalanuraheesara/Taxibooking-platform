@@ -44,7 +44,7 @@ public class UserDAO {
     private static void saveToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (User user : users.values()) {
-                // ✅ Use the role field directly
+                //  Use the role field directly
                 String role = user.getRole();
                 writer.write(user.getId() + "," + user.getName() + "," + user.getEmail() + "," +
                         user.getPassword() + "," + user.getPhone() + "," + role);
