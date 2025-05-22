@@ -6,7 +6,7 @@ import jakarta.servlet.http.*;
 
 import java.io.IOException;
 
-@WebServlet("/LoginServlet") // ✅ Matches the form action="LoginServlet"
+@WebServlet("/LoginServlet") // Matches the form action="LoginServlet"
 public class LoginServlet extends HttpServlet {
 
     @Override
